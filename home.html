@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautySchool</title>
+    <link rel="icon" href="https://cdn.dribbble.com/users/4528464/screenshots/14827949/h-01_4x.jpg">
+    <style>
+        #login{
+            background-color: white;
+        }
+        #login:hover{
+            transform: scale(0.95);
+            transition: 0.1s ease;
+            background-color: cornflowerblue;
+            color: white;
+            font-weight: bold;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-in-out forwards;
+        }
+        p#signup{
+            color: cornflowerblue;
+        }
+        p#signup:hover{
+            color: blue;
+            cursor: pointer;
+            transform: scale(0.92);
+            transition: 0.1s ease;
+        }
+    </style>
+</head>
+<body style="width: 1500px; height: 720px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif;">
+    <main style="position: relative;width: 1500px; height: 720px; background-image: url('assets/background_home.png');background-position: center; background-repeat: no-repeat; background-size: cover;">
+        <div style="position: absolute;width: 300px; height: 300px; margin: 250px 0 0 1100px">
+            <form action="" style="display: flex; flex-direction: column; gap: 10px;">
+                <h1 style="font-size: 20px;">ĐĂNG NHẬP ĐỂ TRẢI NGHIỆM</h1>
+                <input type="text" placeholder="Tài khoản" style="width: 260px; padding: 15px 20px; border-radius: 25px;">
+                <input type="password" placeholder="Mật khẩu" style="width: 260px; padding: 15px 20px; border-radius: 25px;">
+                <div style="width: 300px; height: 50px; display: flex; align-items: center; justify-content: space-between;">
+                    <button id="login" type="submit" style="width: 120px; height: 35px; border-radius: 30px; border: 3px solid cornflowerblue; font-size: 14px">ĐĂNG NHẬP</button>
+                    <p id="signup" style="text-decoration: underline;">Đăng ký</p>
+                </div>
+            </form>
+        </div>
+
+        <div>
+            <p id="text-container" style="font-size: 20px; position: absolute; margin: 46px 0 0 1190px;"></p>
+        </div>
+    </main>
+    <script src="home.js"></script>
+</body>
+</html>

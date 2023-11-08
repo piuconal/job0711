@@ -26,8 +26,6 @@ CREATE TABLE HOSO (
     id_hoso INT AUTO_INCREMENT PRIMARY KEY,
     Ma_hoso VARCHAR(255) UNIQUE,
     Ten_sinh_vien VARCHAR(255),
-    Ngay_sinh DATE,
-    Gioi_tinh VARCHAR(255),
     Dan_toc VARCHAR(255),
     Ton_giao VARCHAR(255),
     Noi_sinh VARCHAR(255),
@@ -98,5 +96,32 @@ VALUES
     ('GV019', 'Le Van S', '777 Đường DEF, Thành phố LMN', '0123123452', '0987654339', 'Nam', '1982-04-10', 'levans@email.com'),
     ('GV020', 'Pham Thi T', '888 Đường GHI, Thành phố OPQ', '0909090903', '0987654340', 'Nữ', '1985-01-20', 'phamthit@email.com');
 
+INSERT INTO SINHVIEN (Ten_sinh_vien, Ma_sinh_vien, Ngay_sinh, Gioi_tinh, Dia_chi, Email, So_dien_thoai, CCCD) 
+VALUES
+	('Nguyễn Văn A', 'SV0001', '2004-01-01', 'Nam', 'Hà Nội', 'a@gmail.com', '0912345678', '1234567890'),
+	('Trần Thị B', 'SV0002', '2005-02-02', 'Nữ', 'Hồ Chí Minh', 'b@gmail.com', '0923456789', '2345678901'),
+	('Lê Quang C', 'SV0003', '2006-03-03', 'Nam', 'Đà Nẵng', 'c@gmail.com', '0934567890', '3456789012'),
+	('Hoàng Thị D', 'SV0004', '2007-04-04', 'Nữ', 'Cần Thơ', 'd@gmail.com', '0945678900', '4567890123'),
+	('Phan Văn E', 'SV0005', '2008-05-05', 'Nam', 'Bắc Ninh', 'e@gmail.com', '0956789001', '5678901234'),
+	('Nguyễn Thị F', 'SV0006', '2009-06-06', 'Nữ', 'Hải Phòng', 'f@gmail.com', '0967890012', '6789012345'),
+	('Đào Minh G', 'SV0007', '2010-07-07', 'Nam', 'Nam Định', 'g@gmail.com', '0978900123', '7890123456'),
+	('Hồ Thị H', 'SV0008', '2011-08-08', 'Nữ', 'Thái Bình', 'h@gmail.com', '0989001234', '8901234567'),
+	('Lương Văn I', 'SV0009', '2012-09-09', 'Nam', 'Hà Nam', 'i@gmail.com', '0990012345', '9012345678'),
+	('Trương Thị J', 'SV0010', '2013-10-10', 'Nữ', 'Ninh Bình', 'j@gmail.com', '0910012346', '1012345679'),
+	('Nguyễn Văn K', 'SV0011', '2014-11-11', 'Nam', 'Thanh Hóa', 'k@gmail.com', '0920012347', '201234567A'),
+	('Nguyễn Thị L', 'SV0012', '2015-12-12', 'Nữ', 'Hà Tĩnh', 'l@gmail.com', '0930012348', '301234567B');
 
-  
+INSERT INTO LOPHOC (Ma_lop, Ten_lop) 
+VALUES
+	('LH0001', 'Toán cao cấp'),
+	('LH0002', 'Phương pháp luận');
+    
+INSERT INTO KHOA (Ma_khoa, Ten_khoa) 
+VALUES
+	('K01', 'Công nghệ thông tin'),
+	('K02', 'Điện tử viễn thông');
+    
+INSERT INTO HOSO (Ma_hoso, Ten_sinh_vien, Dan_toc, Ton_giao, Noi_sinh) 
+VALUES
+	('HS0001', 'Nguyễn Văn A', 'Kinh', 'Không', 'Việt Nam'),
+	('HS0002', 'Trần Thị B', 'Kinh', 'Không', 'Mỹ')

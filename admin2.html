@@ -14,6 +14,33 @@
             width: 230px;
             padding-left: 20px;
         }
+
+        #add_gv input{
+            height: 32px;
+            padding-left: 10px;
+            width: 340px;
+            border-radius: 20px;
+        }
+
+        #add_gv .ct{
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+            width: 350px;
+        }
+        #add_gv .ct button{
+            width: 60px;
+            height: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+        }
+        #add_gv .ct button:hover{
+            opacity: 0.6;
+            transform: scale(0.95);
+            transition: 0.2s ease;
+        }
     </style>
 </head>
 <body style="width: 1500px; height: 720px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif;">
@@ -24,11 +51,10 @@
             </div>
             <ul id="list">
                 <li id="l1">Giảng viên</li>
-                <li id="l2">Hồ sơ</li>
+                <li id="l2">Sinh viên</li>
                 <li id="l3">Lớp học</li>
-                <li id="l4">Sinh viên</li>
-                <li id="l5">Khoa</li>
-                <li id="l6">Phân quyền</li>
+                <li id="l4">Khoa</li>
+                <li id="l5">Phân quyền</li>
             </ul>
             <div style="width: 250px; height: 40px;margin-top: 325px;">
                 <a href="home.html">
@@ -39,11 +65,62 @@
             </div>
         </div>
 
-        <div style=" width: 1200px; height: 670px; margin-top: 30px; border-radius: 25px; box-shadow: 0 0 13px rgb(211, 205, 205);">
+        <div style="display: flex;flex-direction: column ;width: 1200px; height: 670px; margin-top: 30px; border-radius: 25px; box-shadow: 0 0 13px rgb(211, 205, 205); justify-content: center; align-items: center;">
+            <div id="div1" style="height: 600px;margin-top: 5px;width: 1150px; display: flex; flex-direction: column; gap: 10px;">
+                <p>Danh sách sinh viên</p>
+                <div style="max-height: 530px; overflow-y:auto">
+                    <table id="giangvien-table" class="custom-table">
+                        <thead style="position: sticky;top: 0;">
+                        <tr>
+                            <th>Mã GV</th>
+                            <th>Tên giáo viên</th>
+                            <th>Số điện thoại</th>
+                            <th>Ngày sinh</th>
+                            <th>Email</th>
+                            <th style="width: 85px;">Tùy chọn</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
+                        <!-- Thêm dòng tr cho mỗi bản ghi khác -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; width: 1050px; height: 40px;">
+                <button id="add" style="background-color: rgb(91, 79, 63); padding: 3px 15px; color: white; font-weight: bold; border-radius: 20px;">
+                    <span>Thêm sinh viên</span>
+                </button>
+            </div>
+        </div>
+
+        
+        <div id="box" style="position: absolute; width: 1500px; height: 720px; background-color: black; opacity: 0.4; display: none; z-index: 0;"></div>
+        <div id="add_gv" style="flex-direction: column;text-align: center;align-items: center;margin: 50px 0 0 510px;border-radius: 20px;background-color: white ;position: absolute; width: 500px; height: 570px; display: none; z-index: 2;">
+            <h1>Thông tin Sinh Viên</h1>
+            <form style="display: flex;flex-direction: column; align-items: center;" method="POST" action="save_giangvien.php">
+                <input placeholder="Mã giảng viên" type="text" name="ma_gv" required><br>
+                <input placeholder="Tên giảng viên" type="text" name="ten_gv" required><br>
+                <input placeholder="Địa chỉ" type="text" name="dia_chi" required><br>
+                <input placeholder="Số điện thoại" type="text" name="so_dien_thoai" required><br>    
+                <input placeholder="Số CCCD/CMND" type="text" name="cccd" required><br>
+                <input placeholder="Giới tính" type="text" name="gioi_tinh" required><br>    
+                <input placeholder="Ngày sinh" type="date" name="ngay_sinh" required><br>    
+                <input placeholder="Email" type="email" name="email" required><br>
+                <div class="ct">
+                    <button type="submit" style="background-color: aqua;">
+                        <span>Thêm</span>
+                    </button>
+                    <button id="cancel" style="background-color: red;">
+                        <span>Hủy</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </main>
-
+    
+    <script src="admin2.js"></script>
     <script src="admin/admin.js"></script>
 </body>
 </html>

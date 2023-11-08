@@ -1,4 +1,4 @@
-const links = ["l1", "l2", "l3", "l4", "l5", "l6"];
+const links = ["l1", "l2", "l3", "l4", "l5"];
 
 for (let i = 0; i < links.length; i++) {
   const link = document.getElementById(links[i]);

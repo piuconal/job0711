@@ -39,6 +39,32 @@
             transform: scale(0.92);
             transition: 0.1s ease;
         }
+        #add_gv input{
+            height: 32px;
+            padding-left: 10px;
+            width: 340px;
+            border-radius: 20px;
+        }
+
+        #add_gv .ct{
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 25px;
+            width: 350px;
+        }
+        #add_gv .ct button{
+            width: 60px;
+            height: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+        }
+        #add_gv .ct button:hover{
+            opacity: 0.6;
+            transform: scale(0.95);
+            transition: 0.2s ease;
+        }
     </style>
 </head>
 <body style="width: 1500px; height: 720px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif;">
@@ -58,13 +84,25 @@
         <div>
             <p id="text-container" style="font-size: 20px; position: absolute; margin: 46px 0 0 1190px;"></p>
         </div>
-
-        <div id="error-message" style="position: absolute; color: red; margin: 500px 0 0 1100px">
-            <p>❌Tài khoản hoặc mật khẩu không chính xác</p>
+        <div id="box" style="position: absolute; width: 1500px; height: 720px; background-color: black; opacity: 0.4; display: none; z-index: 0;"></div>
+        <div id="add_gv" style="flex-direction: column;text-align: center;align-items: center;margin: 50px 0 0 510px;border-radius: 20px;background-color: white ;position: absolute; width: 500px; height: 300px; display: none; z-index: 2;">
+            <h1>Đăng ký Tài khoản</h1>
+            <form style="display: flex;flex-direction: column; align-items: center;" method="POST" action="save_dangky.php">
+                <input placeholder="Tài khoản" type="text" name="ma_gv" required><br>
+                <input placeholder="Mật khẩu" type="password" name="ten_gv" required><br>
+                <div class="ct">
+                    <button type="submit" style="background-color: aqua;">
+                        <span>Tiếp</span>
+                    </button>
+                    <button id="cancel" style="background-color: red;">
+                        <span>Hủy</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </main>
     <script>
-        const text = "Welcome to BeautySchool!";
+                const text = "Welcome to BeautySchool!";
 const textContainer = document.getElementById("text-container");
 
 for (let i = 0; i < text.length; i++) {
@@ -74,15 +112,12 @@ for (let i = 0; i < text.length; i++) {
   span.style.animationDelay = `${i * 0.1}s`;
   textContainer.appendChild(span);
 }
-
-const errorMessage = document.getElementById("error-message");
-setTimeout(function () {
-  errorMessage.style.display = "none";
-}, 2500);
-
-document.getElementById("signup").addEventListener("click", function () {
-window.location.href="dangky.html"
+            document.getElementById("box").style.display = "block";
+            document.getElementById("add_gv").style.display = "flex";
+        document.getElementById("cancel").addEventListener("click", function(){
+            window.location.href = "home.html";
         });
+
     </script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="admin/admin.css">
     <link rel="icon" href="https://cdn.dribbble.com/users/4528464/screenshots/14827949/h-01_4x.jpg">
     <style>
-        li#l5{
+        li#l3{
             background-color: rgb(91, 79, 63);
             color: white;
             font-weight: bold;
@@ -67,14 +67,13 @@
 
         <div style="display: flex;flex-direction: column ;width: 1200px; height: 670px; margin-top: 30px; border-radius: 25px; box-shadow: 0 0 13px rgb(211, 205, 205); justify-content: center; align-items: center;">
             <div id="div1" style="height: 600px;margin-top: 5px;width: 1150px; display: flex; flex-direction: column; gap: 10px;">
-                <p>Danh sách người dùng</p>
+                <p>Danh sách giảng viên công tác</p>
                 <div style="max-height: 530px; overflow-y:auto">
                     <table id="giangvien-table" class="custom-table">
                         <thead style="position: sticky;top: 0;">
                         <tr>
-                            <th>Tài khoản</th>
-                            <th>Mật khẩu</th>
-                            <th>Phân quyền</th>
+                            <th>Mã lớp</th>
+                            <th>Tên lớp</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -87,19 +86,18 @@
 
             <div style="display: flex; justify-content: flex-end; width: 1050px; height: 40px;">
                 <button id="add" style="background-color: rgb(91, 79, 63); padding: 3px 15px; color: white; font-weight: bold; border-radius: 20px;">
-                    <span>Thêm tài khoản</span>
+                    <span>Thêm lớp học</span>
                 </button>
             </div>
         </div>
 
         
         <div id="box" style="position: absolute; width: 1500px; height: 720px; background-color: black; opacity: 0.4; display: none; z-index: 0;"></div>
-        <div id="add_gv" style="flex-direction: column;text-align: center;align-items: center;margin: 50px 0 0 510px;border-radius: 20px;background-color: white ;position: absolute; width: 500px; height: 300px; display: none; z-index: 2;">
-            <h1>Thông tin Tài khoản</h1>
-            <form style="display: flex;flex-direction: column; align-items: center;" method="POST" action="save_nguoidung.php">
-                <input placeholder="Tài khoản" type="text" name="ma_gv" required><br>
-                <input placeholder="Mật khẩu" type="text" name="ten_gv" required><br>
-                <input placeholder="Phân quyền" type="text" name="dia_chi" required><br>
+        <div id="add_gv" style="flex-direction: column;text-align: center;align-items: center;margin: 50px 0 0 510px;border-radius: 20px;background-color: white ;position: absolute; width: 500px; height: 270px; display: none; z-index: 2;">
+            <h1>Thông tin Lớp học</h1>
+            <form style="display: flex;flex-direction: column; align-items: center;" method="POST" action="save_lophoc.php">
+                <input placeholder="Mã lớp" type="text" name="ma_gv" required><br>
+                <input placeholder="Tên lớp" type="text" name="ten_gv" required><br>
                 <div class="ct">
                     <button type="submit" style="background-color: aqua;">
                         <span>Thêm</span>
@@ -110,9 +108,12 @@
                 </div>
             </form>
         </div>
+        <div id="error" style="position: absolute; margin: 45px 0 0 700px;">
+            <p style="color: green;">✅ Đã thêm thành công!</p>
+        </div>
     </main>
     
-    <script src="admin5.js"></script>
+    <script src="admin3.js"></script>
     <script src="admin/admin.js"></script>
 </body>
 </html>

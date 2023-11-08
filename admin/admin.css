@@ -2,6 +2,7 @@
   position: relative;
   padding: 10px 20px;
   overflow: hidden;
+  margin-top: 52px;
 }
 
 .hover-button::before {
@@ -28,7 +29,7 @@
 }
 #list {
   width: 210px;
-  height: 280px;
+  height: 227px;
   align-items: center;
   justify-content: center;
   display: flex;

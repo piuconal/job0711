@@ -44,7 +44,7 @@
 <body style="width: 1500px; height: 720px; margin: 0 auto; font-family: Arial, Helvetica, sans-serif;">
     <main style="position: relative;width: 1500px; height: 720px; background-image: url('assets/background_home.png');background-position: center; background-repeat: no-repeat; background-size: cover;">
         <div style="position: absolute;width: 300px; height: 300px; margin: 250px 0 0 1100px">
-            <form action="get_nguoidung.php" method="post" style="display: flex; flex-direction: column; gap: 10px;">
+            <form action="login.php" method="post" style="display: flex; flex-direction: column; gap: 10px;">
                 <h1 style="font-size: 20px;">ĐĂNG NHẬP ĐỂ TRẢI NGHIỆM</h1>
                 <input name="username" type="text" placeholder="Tài khoản" style="width: 260px; padding: 15px 20px; border-radius: 25px;">
                 <input name="password" type="password" placeholder="Mật khẩu" style="width: 260px; padding: 15px 20px; border-radius: 25px;">
@@ -59,6 +59,20 @@
             <p id="text-container" style="font-size: 20px; position: absolute; margin: 46px 0 0 1190px;"></p>
         </div>
     </main>
-    <script src="home.js"></script>
+    <script>
+        const text = "Welcome to BeautySchool!";
+const textContainer = document.getElementById("text-container");
+
+for (let i = 0; i < text.length; i++) {
+  const char = text.charAt(i);
+  const span = document.createElement("span");
+  span.textContent = char;
+  span.style.animationDelay = `${i * 0.1}s`;
+  textContainer.appendChild(span);
+}
+document.getElementById("signup").addEventListener("click", function () {
+window.location.href="dangky.html"
+        });
+    </script>
 </body>
 </html>

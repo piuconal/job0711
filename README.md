@@ -1,1 +1,3 @@
-job0711/QUẢN LÝ THÔNG TIN TRƯỜNG HỌC
+QUẢN LÝ THÔNG TIN
+Admin: Quản lý thông tin trường học
+Client: Xem thông tin sinh viên

@@ -8,3 +8,8 @@ for (let i = 0; i < text.length; i++) {
   span.style.animationDelay = `${i * 0.1}s`;
   textContainer.appendChild(span);
 }
+
+const errorMessage = document.getElementById("error-message");
+setTimeout(function() {
+    errorMessage.style.display = "none";
+}, 2500);

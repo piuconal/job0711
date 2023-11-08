@@ -27,3 +27,17 @@ document.addEventListener("DOMContentLoaded", function () {
   xhttp.open("GET", "get_giangvien.php", true);
   xhttp.send();
 });
+
+document.getElementById("add").addEventListener("click", function(){
+  document.getElementById("box").style.display = "block";
+  document.getElementById("add_gv").style.display = "flex";
+});
+
+document.getElementById("cancel").addEventListener("click", function(){
+  document.getElementById("box").style.display = "none";
+  document.getElementById("add_gv").style.display = "none";
+});
+
+setTimeout(function() {
+  document.getElementById("error").style.display = "none";
+}, 2000);

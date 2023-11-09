@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinh viên</title>
-    <link rel="stylesheet" href="client_css/client.css">
+    <link rel="stylesheet" href="client/client.css">
     <link rel="icon" href="https://cdn.dribbble.com/users/4528464/screenshots/14827949/h-01_4x.jpg">
     <style>
         li#l1{
@@ -26,8 +26,9 @@
                 <li id="l1">Thông tin cá nhân</li>
                 <li id="l2">Danh sách giảng viên</li>
                 <li id="l3">Danh sách lớp học</li>
+                <li id="l4">Các khoa trong trường</li>
             </ul>
-            <div style="width: 250px; height: 40px;margin-top: 460px;">
+            <div style="width: 250px; height: 40px;margin-top: 420px;">
                 <a href="home.html">
                     <button id="logout" class="hover-button" style="width: 250px; height: 40px; border: none;">
                         <span>ĐĂNG XUẤT</span>
@@ -36,11 +37,65 @@
             </div>
         </div>
 
-        <div style=" width: 1200px; height: 670px; margin-top: 30px; border-radius: 25px; box-shadow: 0 0 13px rgb(211, 205, 205);">
+        <div style="display: flex;flex-direction: column ;width: 1200px; height: 670px; margin-top: 30px; border-radius: 25px; box-shadow: 0 0 13px rgb(211, 205, 205); justify-content: center; align-items: center;">
+            <div id="div1" style="height: 600px;margin-top: 5px;width: 1150px; display: flex; flex-direction: column; gap: 10px;">
+                <p>Danh sách sinh viên</p>
+                <div style="max-height: 530px; overflow-y:auto">
+                    <table id="giangvien-table" class="custom-table">
+                        <thead style="position: sticky;top: 0;">
+                        <tr>
+                            <th>Mã SV</th>
+                            <th>Tên sinh viên</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                        </tr>
+                        </thead>
+                        <tbody>
 
+                        <!-- Thêm dòng tr cho mỗi bản ghi khác -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            </div>
         </div>
     </main>
 
-    <script src="client1.js"></script>
+    <script>
+        const links = ["l1", "l2", "l3","l4"];
+
+for (let i = 0; i < links.length; i++) {
+  const link = document.getElementById(links[i]);
+  link.addEventListener("click", function() {
+    const page = "client" + (i + 1) + ".html";
+    window.location.href = page;
+  });
+}
+document.addEventListener("DOMContentLoaded", function () {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      if (this.status === 200) {
+        var data = JSON.parse(this.responseText);
+        var tableBody = document.querySelector("#giangvien-table tbody");
+        while (tableBody.firstChild) {
+          tableBody.removeChild(tableBody.firstChild);
+        }
+        data.forEach(function (gv) {
+          var row = tableBody.insertRow(-1);
+          row.insertCell(0).textContent = gv.Ma_sinh_vien;
+          row.insertCell(1).textContent = gv.Ten_sinh_vien;
+          row.insertCell(2).textContent = gv.So_dien_thoai;
+          row.insertCell(3).textContent = gv.Email;
+        });
+      } else {
+        console.error("Lỗi khi tải dữ liệu từ server.");
+      }
+    }
+  };
+  xhttp.open("GET", "get_sinhvien.php", true);
+  xhttp.send();
+});
+    </script>
 </body>
 </html>
